@@ -1,0 +1,130 @@
+FORMAT: 1A
+HOST: https://gs-sts-cloud-foundry-deployment-shailesh.cfapps.io
+
+# SFDC_ACC_API
+
+This is an API to get all the accounts available, create new accounts, get the accounts individually. It can also update and delete an account.
+
+## SFDC Accounts Collection [/]
+
+### Get all Accounts [GET/accounts]
+
++ Response 200 (application/json)
+
+        [
+           
+                    {
+                       "acc_num": 1,
+                       "acc_owner": "Shailesh Tiwari",
+                       "acc_name": "Sale_Tek",
+                       "acc_site": "Texas",
+                       "acc_phn": 9999467123,
+                       "billing_street": "1-A, Blaker Street",
+                       "billing_city": "Texas",
+                       "billing_zip": 234567,
+                       "shipping_street": "2-B, Janson Street",
+                       "shipping_city": "Wisconsin",
+                       "shipping_zip": 765432,
+                       "shipping_country": "USA",
+                       "billing_country": "USA"
+                    },{
+                    
+                       "acc_num": 2,
+                       "acc_owner": "Shailesh Tiwari",
+                       "acc_name": "Operations_Tek",
+                       "acc_site": "Wisconsin",
+                       "acc_phn": 9999467521,
+                       "billing_street": "1-C, Baker Street",
+                       "billing_city": "Texas",
+                       "billing_zip": 764521,
+                       "shipping_street": "2-D, Johnson Street",
+                       "shipping_city": "Wisconsin",
+                       "shipping_zip": 763212,
+                       "shipping_country": "USA",
+                       "billing_country": "USA"
+                    }
+        ]
+
+
+### Get an Account [GET/accounts/{acc_num}]
+
++ Parameters
+    + acc_num(Number)
+    
++ Response 200 (application/json)
+
+                   {
+                       "acc_num": 1,
+                       "acc_owner": "Shailesh Tiwari",
+                       "acc_name": "Sale_Tek",
+                       "acc_site": "Texas",
+                       "acc_phn": 9999467123,
+                       "billing_street": "1-A, Blaker Street",
+                       "billing_city": "Texas",
+                       "billing_zip": 234567,
+                       "shipping_street": "2-B, Janson Street",
+                       "shipping_city": "Wisconsin",
+                       "shipping_zip": 765432,
+                       "shipping_country": "USA",
+                       "billing_country": "USA"
+                    }
+    
+### Create a new Account[POST/accounts]
+
++ Request (application/json)
+
+                   {
+                       "acc_num": 3,
+                       "acc_owner": "Shailesh Tiwari",
+                       "acc_name": "Finance_Tek",
+                       "acc_site": "New York",
+                       "acc_phn": 8888467123,
+                       "billing_street": "1-A, Blaker Street",
+                       "billing_city": "Texas",
+                       "billing_zip": 234567,
+                       "shipping_street": "2-B, Janson Street",
+                       "shipping_city": "Wisconsin",
+                       "shipping_zip": 765432,
+                       "shipping_country": "India",
+                       "billing_country": "UK"
+                    }
+
++ Response 200
+      
+         Account created Successfully!!!
+
+### Update an Account[PUT/accounts/{acc_num}]
+
++ Parameters
+    + acc_num(Number)
+    
++ Request (application/json)
+
+                   {
+                       "acc_num": 3,
+                       "acc_owner": "Shailesh Tiwari",
+                       "acc_name": "Updated_Finance_Tek",
+                       "acc_site": "New York",
+                       "acc_phn": 8888467123,
+                       "billing_street": "1-A, Blaker Street",
+                       "billing_city": "Texas",
+                       "billing_zip": 234567,
+                       "shipping_street": "2-B, Janson Street",
+                       "shipping_city": "Wisconsin",
+                       "shipping_zip": 765432,
+                       "shipping_country": "India",
+                       "billing_country": "UK"
+                    }
+
++ Response 200
+      
+         Account updated Successfully!!!
+
+### Delete an Account[DELETE/accounts/{acc_num}]
+
++ Parameters
+    + acc_num(Number)
+    
++ Response 200
+      
+         Account Deleted Successfully!!!
