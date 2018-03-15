@@ -8,7 +8,16 @@ This is an API to get all the accounts available, create new accounts, get the a
 ## SFDC Accounts Collection [/]
 
 ### Get all Accounts [GET/accounts]
++ Response 401
+    + Headers
+   
+            WWW-Authenticate: Basic realm="protected"
 
++ Request
+    + Headers
+
+            Authorization: Basic ABC123
+            
 + Response 200 (application/json)
 
         [
